@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<circle fill="none" stroke="#32ae6e" stroke-miterlimit="10" stroke-dasharray="12" cx="50" cy="50" r="48.02">
+	<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 50 50" to="360 50 50" dur="10s" repeatCount="indefinite" />
+</circle>
+<circle fill="#32ae6e" cx="50" cy="50" r="39.113"/>
+<path fill="#FFFFFF" d="M37.841,58.893c0,1.221-1.122,2.213-2.508,2.213l0,0c-1.385,0-2.508-0.992-2.508-2.213V41.106
+	c0-1.221,1.123-2.211,2.508-2.211l0,0c1.386,0,2.508,0.99,2.508,2.211V58.893z">
+	<animateTransform attributeName="transform" attributeType="XML" type="translate" dur="1s" values="0,6;0,-6;0,6" repeatCount="indefinite" />
+</path>
+<path fill="#FFFFFF" d="M45.174,58.893c0,1.221-1.122,2.213-2.508,2.213l0,0c-1.385,0-2.508-0.992-2.508-2.213V41.106
+	c0-1.221,1.123-2.211,2.508-2.211l0,0c1.386,0,2.508,0.99,2.508,2.211V58.893z">
+	<animateTransform attributeName="transform" attributeType="XML" type="translate" begin=".1" dur="1s" values="0,6;0,-6;0,6" repeatCount="indefinite" />
+</path>
+<path fill="#FFFFFF" d="M52.841,58.893c0,1.221-1.122,2.213-2.508,2.213l0,0c-1.385,0-2.508-0.992-2.508-2.213V41.106
+	c0-1.221,1.123-2.211,2.508-2.211l0,0c1.386,0,2.508,0.99,2.508,2.211V58.893z">
+	<animateTransform attributeName="transform" attributeType="XML" type="translate" begin=".2" dur="1s" values="0,6;0,-6;0,6" repeatCount="indefinite" />
+</path>
+<path fill="#FFFFFF" d="M60.174,58.893c0,1.221-1.122,2.213-2.508,2.213l0,0c-1.385,0-2.508-0.992-2.508-2.213V41.106
+	c0-1.221,1.123-2.211,2.508-2.211l0,0c1.386,0,2.508,0.99,2.508,2.211V58.893z">
+	<animateTransform attributeName="transform" attributeType="XML" type="translate" begin=".3" dur="1s" values="0,6;0,-6;0,6" repeatCount="indefinite" />
+</path>
+<path fill="#FFFFFF" d="M67.174,58.893c0,1.221-1.122,2.213-2.508,2.213l0,0c-1.385,0-2.508-0.992-2.508-2.213V41.106
+	c0-1.221,1.123-2.211,2.508-2.211l0,0c1.386,0,2.508,0.99,2.508,2.211V58.893z">
+	<animateTransform attributeName="transform" attributeType="XML" type="translate" begin=".4" dur="1s" values="0,6;0,-6;0,6" repeatCount="indefinite" />
+</path>
+</svg>
