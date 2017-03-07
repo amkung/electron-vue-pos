@@ -1,21 +1,24 @@
 <template>
-  <section class="module-container wrapper">
+  <section class="flex flex-column-content wrapper">
       <navbar class="header"></navbar>
-      <div class="content">
-        <div class="inner-content module-container">
-          <div class="panel-pos-1">            
-            <client-info></client-info>
-            <vendor-info></vendor-info>   
+      <div class="dashboard-content">
+        <div class="dashboard-inner-content flex flex-column-content">
+          <div class="dashboard-panel-pos-1 flex flex-column-content">    
+              <client-info></client-info>
+              <vendor-info></vendor-info>   
           </div>
-          <div class="panel-pos-2">
+          <div class="dashboard-panel-pos-2 flex flex-column-content">
             <product-detail></product-detail>
             <calculator-input></calculator-input>
+            <calculator-keyboard></calculator-keyboard>
           </div>
-          <div class="panel-pos-3">
-            <cart-summary></cart-summary>
-            <cart-list></cart-list>
+          <div class="dashboard-panel-pos-3 flex flex-column-content">
+            <div class="__test flex flex-column-content" >
+              <cart-list></cart-list>
+              <cart-summary></cart-summary>
+            </div>
           </div>
-          <div class="panel-pos-4">
+          <div class="dashboard-panel-pos-4 flex flex-column-content">
             <manage-control></manage-control>
           </div>
         </div>
@@ -31,6 +34,7 @@
   import CartList from './Module/CartList'
   import CartSummary from './Module/CartSummary'
   import CalculatorInput from './Module/CalculatorInput'
+  import CalculatorKeyboard from './Module/CalculatorKeyboard'
   import ManageControl from './Module/ManageControl'
   import VendorInfo from './Module/VendorInfo'
   import Links from './DashboardPageView/Links'
@@ -42,6 +46,7 @@
       CartList,
       CartSummary,
       CalculatorInput,
+      CalculatorKeyboard,
       ManageControl,
       VendorInfo,
       Links
@@ -51,29 +56,34 @@
 </script>
 
 <style scoped>
-
-  .module-container {    
-    -webkit-flex-flow: column wrap;
-    flex-flow: column wrap;
-  }
-  .content{
+  .dashboard-content{
     flex: 1;
-    margin: 10px;
+    display: flex;
+    flex-flow: column;
   }
-  .inner-content{
-    padding: 15px;
+  .dashboard-inner-content{
     flex-flow: row wrap;
+    height: 100%;
   }
-  .panel-pos-1{
+  .dashboard-panel-pos-1{
     flex: 1.5;
   }
-  .panel-pos-2{
+  .dashboard-panel-pos-2{
     flex: 2;
   }
-  .panel-pos-3{
+  .dashboard-panel-pos-3{
     flex: 4;
   }
-  .panel-pos-4{
+  .dashboard-panel-pos-4{
     flex: 1.5;
+  }
+  /* TODO: for some module */
+  .__test{
+    background: #fff;
+    padding: 10px;
+    margin: 10px;
+    margin-right: 0;
+    border-radius: 3px;
+    height: 100%;
   }
 </style>

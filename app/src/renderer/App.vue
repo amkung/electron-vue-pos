@@ -24,13 +24,14 @@
   .wrapper { height: 100%;min-height: 100% }
 
   body {
-    background:
+    background: #c2cdd6;
+    /*background:
       radial-gradient(
         ellipse at center,
         rgba(255, 255, 255, 1) 0%,
         rgba(229, 229, 229, .85) 100%
       );
-    background-position: center;
+    background-position: center;*/
     font-family: Lato, Helvetica, sans-serif;
   }
   .app-container{
@@ -38,11 +39,20 @@
     min-height: 100%;
   }
 
-  .module-container {
+  .flex {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;  
+  }
+  
+  .flex-column-content {
+    flex-flow: column wrap;
+  }
+
+  .flex-row-middle-content {
+    flex-flow: row nowrap;
+    align-items: center;
   }
 </style>
