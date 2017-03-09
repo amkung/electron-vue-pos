@@ -1,16 +1,8 @@
 <template>
-  <div class="client-info-container">
+  <div>
    Client info Panel.
   </div>
 </template>
 
 <style scoped>
-  .client-info-container{
-    background: #fff;
-    padding: 10px;
-    margin: 10px;
-    margin-right: 0;
-    border-radius: 3px;
-    flex: 1.21;
-  }
 </style>

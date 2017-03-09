@@ -1,6 +1,6 @@
 <template>
-  <div class="navbar-dark flex flex-row-middle-content">
-    <div class="navbar-manager-panel flex flex-row-middle-content">
+  <div class="navbar-dark flex flex-row-middle">
+    <div class="navbar-manager-panel flex flex-row-middle">
       <img class="navbar-image-manager" src="./Navbar/assets/man.svg" alt="manager">
       <div class="navbar-text-manager">Supakrit Nuanpho</div>
     </div>
@@ -19,12 +19,31 @@
   export default {
     data () {
       return {
-        time: new Date()
+        time: this.$store.getters.currentTimestamp
       }
+    },
+    methods: {
+      updateTimestamp: function () {
+        var vm = this
+        return vm.$store.dispatch('updateTimestamp').then(() => {
+          vm.time = vm.$store.getters.currentTimestamp
+          console.log('updateTimestamp', vm.time)
+        })
+      },
+      updateTimestampProcessBackground: function () {
+        var vm = this
+        if (!vm.$store.getters.isUpdateTimestamp) {
+          vm.$store.dispatch('startUpdateTimestamp').then(() => {
+            return vm.updateTimestamp()
+          }).then(() => {
+            setInterval(vm.updateTimestamp, 1000)
+          })
+        }
+      }
+    },
+    created: function () {
+      this.updateTimestampProcessBackground()
     }
-    // created () {
-
-    // }
   }
 
 </script>

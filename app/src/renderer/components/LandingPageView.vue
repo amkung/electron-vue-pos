@@ -1,6 +1,6 @@
 <template>
-  <section class="module-container wrapper">
-    <div>
+  <section class="landing-page-container flex flex-row-middle flex-align-center">
+    <div >
       <img src="./LandingPageView/assets/loading.svg" alt="electron-vue">
       <h1>Welcome.</h1>
       <current-page></current-page>
@@ -39,9 +39,7 @@
     100% {transform: translateY(0)}
   }
 
-  .module-container {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  .landing-page-container{
+    flex: 1;
   }
 </style>

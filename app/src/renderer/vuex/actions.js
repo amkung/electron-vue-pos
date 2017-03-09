@@ -7,3 +7,16 @@ export const decrementMain = ({ commit }) => {
 export const incrementMain = ({ commit }) => {
   commit(types.INCREMENT_MAIN_COUNTER)
 }
+
+export const updateTimestamp = ({ commit }) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      commit(types.UPDATE_TIMESTAMP)
+      resolve()
+    }, 200)
+  })
+}
+
+export const startUpdateTimestamp = ({ commit }) => {
+  commit(types.START_UPDATE_TIMESTAMP)
+}
