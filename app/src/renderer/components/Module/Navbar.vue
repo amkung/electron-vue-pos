@@ -8,9 +8,8 @@
       <h3>AmmykO Shop</h3>
     </div>
     <div class="navbar-time-panel">
-      <!--<div>7 March 2017</div>
-      <h1>{{time}}</h1>-->
-      {{time}}
+      <div>{{autoDate}}</div>
+        <h1>{{autoTime}}</h1>
     </div>
   </div>
 </template>
@@ -19,30 +18,52 @@
   export default {
     data () {
       return {
+        _interval: null,
         time: this.$store.getters.currentTimestamp
+      }
+    },
+    computed: {
+      autoDate: function () {
+        return this.formatDate(this.time)
+      },
+      autoTime: function () {
+        var hours = this.time.getHours()
+        var minutes = this.time.getMinutes()
+        var second = this.time.getSeconds()
+
+        return hours + ':' + (minutes < 10 ? '0' + minutes : minutes) + ':' + (second < 10 ? '0' + second : second)
       }
     },
     methods: {
       updateTimestamp: function () {
-        var vm = this
-        return vm.$store.dispatch('updateTimestamp').then(() => {
-          vm.time = vm.$store.getters.currentTimestamp
-          console.log('updateTimestamp', vm.time)
+        return this.$store.dispatch('updateTimestamp').then(() => {
+          this.time = this.$store.getters.currentTimestamp
         })
       },
       updateTimestampProcessBackground: function () {
-        var vm = this
-        if (!vm.$store.getters.isUpdateTimestamp) {
-          vm.$store.dispatch('startUpdateTimestamp').then(() => {
-            return vm.updateTimestamp()
-          }).then(() => {
-            setInterval(vm.updateTimestamp, 1000)
+        if (!this.$store.getters.isUpdateTimestamp) {
+          this.updateTimestamp().then(() => {
+            this._interval = setInterval(this.updateTimestamp, 1000)
           })
         }
+      },
+      formatDate: function (date) {
+        var monthNames = [
+          'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+        ]
+
+        var day = date.getDate()
+        var monthIndex = date.getMonth()
+        var year = date.getFullYear()
+
+        return day + ' ' + monthNames[monthIndex] + ' ' + year
       }
     },
     created: function () {
       this.updateTimestampProcessBackground()
+    },
+    beforeDestroy: function () {
+      clearInterval(this._interval)
     }
   }
 

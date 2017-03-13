@@ -16,7 +16,3 @@ export const updateTimestamp = ({ commit }) => {
     }, 200)
   })
 }
-
-export const startUpdateTimestamp = ({ commit }) => {
-  commit(types.START_UPDATE_TIMESTAMP)
-}
