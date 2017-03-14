@@ -60,6 +60,10 @@
   .flex-column {
     flex-flow: column wrap;
   }
+
+  .flex-row {
+    flex-flow: row nowrap;    
+  }
   
   .flex-row-middle {
     flex-flow: row nowrap;
@@ -68,6 +72,14 @@
   
   .flex-align-center {
     justify-content: center;
+    text-align: center;
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  .text-center {
     text-align: center;
   }
 </style>

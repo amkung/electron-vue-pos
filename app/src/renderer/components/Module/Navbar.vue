@@ -1,69 +1,20 @@
 <template>
   <div class="navbar-dark flex flex-row-middle">
-    <div class="navbar-manager-panel flex flex-row-middle">
-      <img class="navbar-image-manager" src="./Navbar/assets/man.svg" alt="manager">
-      <div class="navbar-text-manager">Supakrit Nuanpho</div>
-    </div>
-    <div class="navbar-brand-name-panel">
-      <h3>AmmykO Shop</h3>
-    </div>
-    <div class="navbar-time-panel">
-      <div>{{autoDate}}</div>
-        <h1>{{autoTime}}</h1>
-    </div>
+    <manager-panel></manager-panel>
+    <brand-name-panel></brand-name-panel>
+    <time-panel></time-panel>
   </div>
 </template>
 
 <script>
+  import TimePanel from './Navbar/TimePanel'
+  import BrandNamePanel from './Navbar/BrandNamePanel'
+  import ManagerPanel from './Navbar/ManagerPanel'
   export default {
-    data () {
-      return {
-        _interval: null,
-        time: this.$store.getters.currentTimestamp
-      }
-    },
-    computed: {
-      autoDate: function () {
-        return this.formatDate(this.time)
-      },
-      autoTime: function () {
-        var hours = this.time.getHours()
-        var minutes = this.time.getMinutes()
-        var second = this.time.getSeconds()
-
-        return hours + ':' + (minutes < 10 ? '0' + minutes : minutes) + ':' + (second < 10 ? '0' + second : second)
-      }
-    },
-    methods: {
-      updateTimestamp: function () {
-        return this.$store.dispatch('updateTimestamp').then(() => {
-          this.time = this.$store.getters.currentTimestamp
-        })
-      },
-      updateTimestampProcessBackground: function () {
-        if (!this.$store.getters.isUpdateTimestamp) {
-          this.updateTimestamp().then(() => {
-            this._interval = setInterval(this.updateTimestamp, 1000)
-          })
-        }
-      },
-      formatDate: function (date) {
-        var monthNames = [
-          'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
-        ]
-
-        var day = date.getDate()
-        var monthIndex = date.getMonth()
-        var year = date.getFullYear()
-
-        return day + ' ' + monthNames[monthIndex] + ' ' + year
-      }
-    },
-    created: function () {
-      this.updateTimestampProcessBackground()
-    },
-    beforeDestroy: function () {
-      clearInterval(this._interval)
+    components: {
+      TimePanel,
+      BrandNamePanel,
+      ManagerPanel
     }
   }
 
@@ -83,29 +34,5 @@
     color: #fff;
     height: 60px;
     justify-content: space-between;
-  }
-  
-  .navbar-manager-panel {
-    flex: 1;
-  }
-  
-  .navbar-brand-name-panel {
-    flex: 2;
-    text-align: center
-  }
-  
-  .navbar-time-panel {
-    flex: 1;
-    text-align: right
-  }
-  
-  .navbar-image-manager {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .navbar-text-manager {
-    padding: 5px 10px;
-    align-self: flex-end;
   }
 </style>

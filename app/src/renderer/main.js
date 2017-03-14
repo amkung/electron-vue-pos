@@ -6,6 +6,8 @@ import Router from 'vue-router'
 import App from './App'
 import routes from './routes'
 
+import 'material-design-icons/iconfont/material-icons.css'
+
 Vue.use(Electron)
 Vue.use(Resource)
 Vue.use(Router)
