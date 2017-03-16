@@ -1,13 +1,15 @@
 <template>
-  <section class="landing-page-container flex flex-row-middle flex-align-center">
-    <div >
-      <img src="./LandingPageView/assets/loading.svg" alt="electron-vue">
-      <h1>Welcome.</h1>
-      <current-page></current-page>
-      <versions></versions>
-      <links></links>
+  <content>
+    <div class="landing-page-container flex flex-row-middle flex-align-center">
+      <div >
+        <img src="./LandingPageView/assets/loading.svg" alt="electron-vue">
+        <h1>Welcome.</h1>
+        <current-page></current-page>
+        <versions></versions>
+        <links></links>
+      </div>
     </div>
-  </section>
+  </content>
 </template>
 
 <script>

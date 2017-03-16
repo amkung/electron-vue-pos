@@ -1,44 +1,44 @@
 <template>
-  <section class="flex flex-column wrapper">
-    <navbar class="header"></navbar>
-    <div class="dashboard-content">
-      <div class="dashboard-inner-content flex flex-column">
-        <div class="dashboard-panel-pos-1 flex flex-column">
-          <div class="dashboard-panel client-info-panel">
-            <client-info></client-info>
+  <content>
+    <div class="flex flex-column wrapper">
+      <div class="dashboard-content">
+        <div class="dashboard-inner-content flex flex-column">
+          <div class="dashboard-panel-pos-1 flex flex-column">
+            <div class="dashboard-panel client-info-panel">
+              <client-info :user-info="userInfo"></client-info>
+            </div>
+            <div class="dashboard-panel vendor-info-panel">
+              <vendor-info></vendor-info>
+            </div>
           </div>
-          <div class="dashboard-panel vendor-info-panel">
-            <vendor-info></vendor-info>
+          <div class="dashboard-panel-pos-2 flex flex-column">
+            <div class="dashboard-panel product-detail-panel">
+              <product-detail></product-detail>
+            </div>
+            <div class="dashboard-panel calculator-input-panel">
+              <calculator-input></calculator-input>
+            </div>
+            <div class="dashboard-panel calculator-keyboard-panel">
+              <calculator-keyboard></calculator-keyboard>
+            </div>
           </div>
-        </div>
-        <div class="dashboard-panel-pos-2 flex flex-column">
-          <div class="dashboard-panel product-detail-panel">
-            <product-detail></product-detail>
+          <div class="dashboard-panel-pos-3 flex flex-column">
+            <div class="dashboard-panel cart-info-panel flex flex-column">
+              <cart-list></cart-list>
+              <cart-summary></cart-summary>
+            </div>
           </div>
-          <div class="dashboard-panel calculator-input-panel">
-            <calculator-input></calculator-input>
+          <div class="dashboard-panel-pos-4 flex flex-column">
+            <manage-control></manage-control>
           </div>
-          <div class="dashboard-panel calculator-keyboard-panel">
-            <calculator-keyboard></calculator-keyboard>
-          </div>
-        </div>
-        <div class="dashboard-panel-pos-3 flex flex-column">
-          <div class="dashboard-panel cart-info-panel flex flex-column">
-            <cart-list></cart-list>
-            <cart-summary></cart-summary>
-          </div>
-        </div>
-        <div class="dashboard-panel-pos-4 flex flex-column">
-          <manage-control></manage-control>
         </div>
       </div>
+      <links></links>
     </div>
-    <links></links>
-  </section>
+  </content>
 </template>
 
 <script>
-  import Navbar from './Module/Navbar'
   import ClientInfo from './Module/ClientInfo'
   import ProductDetail from './Module/ProductDetail'
   import CartList from './Module/CartList'
@@ -50,7 +50,6 @@
   import Links from './DashboardPageView/Links'
   export default {
     components: {
-      Navbar,
       ClientInfo,
       ProductDetail,
       CartList,
@@ -61,7 +60,19 @@
       VendorInfo,
       Links
     },
-    name: 'dashboard-page'
+    name: 'dashboard-page',
+    data () {
+      return {
+        userInfo: {
+          clientId: 1232,
+          userId: '3300000000X',
+          name: 'John Doe Client',
+          address: 'C/ Julio Verm 12 07001 Palma de Mallorca',
+          phone: '971 12314',
+          mail: 'Johndoe@john.com'
+        }
+      }
+    }
   }
 
 </script>

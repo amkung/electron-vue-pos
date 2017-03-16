@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li><router-link to="dashboard">เข้าสูหน้า dashboard</router-link></li>
+    <li><router-link :to="{ name: 'dashboard-page'}">เข้าสูหน้า dashboard</router-link></li>
   </ul>
 </template>
 

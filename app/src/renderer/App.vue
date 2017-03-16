@@ -1,11 +1,15 @@
 <template>
   <div id="#app" class="app-container flex flex-column ">
-    <router-view></router-view>
+    <navbar></navbar>
+    <!-- <div class="flex flex-1"> -->
+      <router-view class="flex flex-1"></router-view>
+    <!-- </div> -->
   </div>
 </template>
 
 <script>
   import store from 'renderer/vuex/store'
+  import Navbar from './components/Module/Navbar'
   export default {
     // created () {
     //   console.log('created', this.$store.getters.currentTimestamp)
@@ -13,6 +17,9 @@
     //   //   time: this.$store.getters.currentTimestamp
     //   // }
     // },
+    components: {
+      Navbar
+    },
     store
   }
 
@@ -24,6 +31,9 @@
     margin: 0;
     padding: 0;
   }
+  
+	::-moz-selection { background: rgba(255, 255, 255, 0); }
+	::selection { background: rgba(255, 255, 255, 0); }
   
   html,
   body,
